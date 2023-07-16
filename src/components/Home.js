@@ -19,8 +19,8 @@ const Home = () => {
 
   return (
     <div className="container">
-      <div className="header">
-        <div className="top-bar">
+      <header className="header">
+        <div className="header-top">
           <div className="logo-and-search">
             <img
               className="github-logo"
@@ -29,13 +29,13 @@ const Home = () => {
             />
             <input className="search-bar" type="text" placeholder="Search" />
           </div>
-          <div className="navigation">
+          <nav className="navigation">
             <Link to="/">Pull requests</Link>
             <Link to="/">Issues</Link>
             <Link to="/">Codespaces</Link>
             <Link to="/">Marketplace</Link>
             <Link to="/">Explore</Link>
-          </div>
+          </nav>
           <div className="profile">
             <img
               className="profile-logo"
@@ -45,23 +45,29 @@ const Home = () => {
             <button className="add-button">+</button>
           </div>
         </div>
-        <h1>GitHub Jobs</h1>
-        <p>Find your next opportunity at GitHub</p>
-      </div>
-      <ul className="jobs-list">
-        {jobs.map(job => (
-          <li key={job.id} className="jobs-list-item">
-            <h2 className="job-title">{job.title}</h2>
-            <p className="job-location">{job.location}</p>
-            <p className="job-description">{job.description.substring(0, 200)}...</p>
-            <Link className="link-button" to={`/job/${job.id}`}>
-              View Details
-            </Link>
-            <button onClick={() => addBookmark(job)}>Bookmark</button>
-          </li>
-        ))}
-      </ul>
+        <div className="header-content">
+          <h1 className="header-title">Find your next opportunity at GitHub</h1>
+          <p className="header-description">GitHub is where people build software. We're looking for talented individuals to join our growing team.</p>
+        </div>
+      </header>
       <FeaturedJobs />
+      <section className="jobs-section">
+        <h2 className="jobs-section-title">Job Listings</h2>
+        <ul className="jobs-list">
+          {jobs.map(job => (
+            <li key={job.id} className="job-list-item">
+              <div className="job-header">
+                <h3 className="job-title">{job.title}</h3>
+                <p className="job-location">{job.location}</p>
+              </div>
+              <p className="job-description">{job.description.substring(0, 200)}...</p>
+              <Link className="job-link" to={`/job/${job.id}`}>
+                View Details
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
       <Bookmarks />
     </div>
   );
