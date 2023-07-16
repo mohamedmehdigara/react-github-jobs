@@ -16,9 +16,17 @@ const JobDetails = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className="job-details">
       <h2>{job.title}</h2>
-      <p>{job.description}</p>
+      <p>{job.company}</p>
+      <p>{job.type}</p>
+      <p>{job.location}</p>
+      {job.company_logo && <img src={job.company_logo} alt="Company Logo" />}
+      <div dangerouslySetInnerHTML={{ __html: job.description }} />
+      <div dangerouslySetInnerHTML={{ __html: job.how_to_apply }} />
+      <a href={job.url} target="_blank" rel="noopener noreferrer">
+        Apply Now
+      </a>
     </div>
   );
 };
