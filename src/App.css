@@ -36,3 +36,71 @@
     transform: rotate(360deg);
   }
 }
+
+/* App.css */
+
+.featured-jobs {
+  margin-top: 40px;
+}
+
+.featured-jobs h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.featured-jobs .jobs-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.featured-jobs .jobs-list-item {
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e1e4e8;
+  padding-bottom: 24px;
+}
+
+.featured-jobs .jobs-list-item h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.featured-jobs .jobs-list-item p {
+  font-size: 14px;
+  color: #586069;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin-right: 5px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.sorting-options,
+.filtering-options {
+  margin-top: 16px;
+}
+
+.sorting-options span,
+.filtering-options span {
+  margin-right: 8px;
+}
+
+.sorting-options button,
+.filtering-options input {
+  margin-right: 8px;
+}
